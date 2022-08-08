@@ -53,6 +53,13 @@ class _MeningDasturimState extends State {
     });
   }
 
+  void reset(){
+    setState(() {
+      _index = 0;
+      jamiAchko = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,7 +74,7 @@ class _MeningDasturimState extends State {
                 index: _index,
                 hodisa: bosilish,
               )
-            : Result(fullScore: jamiAchko),
+            : Result(fullScore: jamiAchko,reset: reset,),
       ),
     );
   }
